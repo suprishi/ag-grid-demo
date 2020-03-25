@@ -1,0 +1,26 @@
+<div class="spinner" *ngIf="spinner">
+  <mat-spinner color="accent" [diameter]="30"></mat-spinner>
+</div>
+<table>
+  <tr>
+    <th>CY Closing</th>
+    <th>ETD</th>
+    <th>ETA</th>
+    <th>Transit Days</th>
+    <th>Via</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let row of data">
+    <td>{{ row.cyClosingDayOfWeek }}</td>
+    <td>{{ row.etdDayOfWeek }}</td>
+    <td>{{ row.etaDayOfWeek }}</td>
+    <td>{{ row.transitTime }}</td>
+    <td>{{ row.routingVia }}</td>
+    <td>USD {{ row.price }}</td>
+  </tr>
+</table>
+<hr>
+<h4>HTML code</h4>
+<pre>
+    {{ html }}
+</pre>

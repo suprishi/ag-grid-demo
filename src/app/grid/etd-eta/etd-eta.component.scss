@@ -1,0 +1,121 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.cellContainer {
+  display: flex;
+  height: 100%;
+  padding-right: 6.5%;
+  justify-content: space-between;
+}
+
+.etd,
+.eta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 29%;
+}
+
+.label {
+  color: #adadad;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.value {
+  font-size: 1.48em;
+  font-weight: 700;
+  color: #002b55;
+  line-height: 1.6em;
+}
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  .arrowLine {
+    width: 100%;
+    height: 2px;
+    line-height: 0;
+    background-color: #002b55;
+    color: #002b55;
+  }
+  .arrowDot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #002b55;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    margin-left: -3px;
+    top: -3px;
+  }
+}
+
+.routing {
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  padding: 0 1%;
+}
+
+.transshipment-port {
+  color: #adadad;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.transitTime {
+  color: #adadad;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+@include media-breakpoint-only(lg) {
+  .cellContainer {
+    padding-right: 4%;
+  }
+  .etd,
+  .eta {
+    width: 33%;
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .etd,
+  .eta {
+    width: auto;
+    font-size: 0.8em;
+  }
+  .routing {
+    width: 30%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .label {
+    font-size: 0.9em;
+  }
+  .value {
+    font-size: 1.4em;
+  }
+  .etd,
+  .eta {
+    width: 30%;
+  }
+  .cellContainer {
+    padding-left: 5px;
+    padding-right: 5%;
+  }
+}

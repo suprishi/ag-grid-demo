@@ -1,0 +1,30 @@
+<div class="spinner" *ngIf="spinner">
+  <mat-spinner color="accent" [diameter]="30"></mat-spinner>
+</div>
+<ag-grid-angular
+  style="height: 500px;"
+  class="ag-theme-material"
+  [columnDefs]="columnDefs"
+  [rowData]="data"
+></ag-grid-angular>
+<hr />
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Configuring the license in <i><b>main.ts</b></i></h4>
+    <pre>{{ license }}</pre>
+  </div>
+  <div class="col-sm-6">
+    <h4>Registering in <i><b>app.module.ts</b></i></h4>
+    <pre>{{ appModule }}</pre>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Configuring in component</h4>
+    <pre>this.columnDefs = {{ columnDefs | json }}</pre>
+  </div>
+  <div class="col-sm-6">
+    <h4>HTML</h4>
+    <pre> {{ html }}</pre>
+  </div>
+</div>

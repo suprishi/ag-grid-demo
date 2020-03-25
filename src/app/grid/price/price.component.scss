@@ -1,0 +1,64 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.priceContainer {
+  background-color: #e6f4fc;
+  color: #002b55;
+  font-size: 1.8em;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+  align-items: center;
+}
+
+.noPrice {
+  filter: blur(4px);
+}
+
+.priceValue {
+  font-weight: 700;
+  margin: 0 5px;
+}
+
+mat-icon {
+  color: #56b7e9;
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
+  transition: 0.3s all;
+}
+
+@include media-breakpoint-only(md) {
+  .priceContainer {
+    font-size: 1.5em;
+  }
+  .wrapper {
+    padding-right: 0;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  mat-icon.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .priceContainer {
+    font-size: 1.4em;
+  }
+  .wrapper {
+    justify-content: center;
+  }
+  mat-icon {
+    font-size: 1.1em;
+  }
+}

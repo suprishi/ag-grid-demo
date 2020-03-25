@@ -1,0 +1,113 @@
+<div class="expanded-price container-fluid" [ngClass]="{'isDialog': isDialog}">
+    <div class="dialogHeader" *ngIf="isDialog">
+        <h1 mat-dialog-title class="title">Price Breakdown</h1>
+        <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="price-contents row">
+        <div *ngIf="dataSource.priceBreakUpMap.customsClearanceExport || dataSource.priceBreakUpMap.origin" [ngClass]="columnClass">
+        <div *ngIf=dataSource.priceBreakUpMap.origin>
+            <div class="charges-types">Origin Charges</div>
+            <div class="charges-contents">
+            <table>
+                <tr *ngFor="let priceOrigin of dataSource.priceBreakUpMap.origin | keyvalue">
+                <td class="currency-key">
+                    <p>{{priceOrigin.key}}</p>
+                </td>
+                <td class="currency-val text-right">
+                    <p>
+                    {{priceBreakupValue(priceOrigin.value)}} 
+                    {{priceBreakupCurrency(priceOrigin.value)}}
+                    </p>
+                </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div *ngIf="dataSource.priceBreakUpMap.customsClearanceExport">
+            <div *ngIf="isDialog" class="charges-types">Customs Clearance Export</div>
+            <div class="charges-contents">
+            <table>
+                <tr *ngFor="let customsClearanceExport of dataSource.priceBreakUpMap.customsClearanceExport | keyvalue">
+                <td class="currency-key" [ngClass]="{'charges-types': !isDialog}">
+                    <p>{{customsClearanceExport.key}}</p>
+                </td>
+                <td class="currency-val text-right">
+                    <p>
+                    {{priceBreakupValue(customsClearanceExport.value)}} 
+                    {{priceBreakupCurrency(customsClearanceExport.value)}}
+                    </p>
+                </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        </div>
+        <div *ngIf=dataSource.priceBreakUpMap.seaFreight [ngClass]="columnClass">
+        <div class="charges-types">Sea Freight</div>
+        <div class="charges-contents">
+            <table>
+            <tr *ngFor="let priceSeaFreight of dataSource.priceBreakUpMap.seaFreight | keyvalue">
+                <td class="currency-key">
+                <p>{{priceSeaFreight.key}}</p>
+                </td>
+                <td class="currency-val text-right">
+                <p>
+                    {{priceBreakupValue(priceSeaFreight.value)}} 
+                    {{priceBreakupCurrency(priceSeaFreight.value)}}
+                </p>
+                </td>
+            </tr>
+            </table>
+        </div>
+        </div>
+        <div *ngIf="dataSource.priceBreakUpMap.customsClearanceImport || dataSource.priceBreakUpMap.destination" [ngClass]="columnClass">
+        <div *ngIf=dataSource.priceBreakUpMap.destination>
+            <div class="charges-types">Destination Charges</div>
+            <div class="charges-contents">
+            <table>
+                <tr *ngFor="let priceDestination of dataSource.priceBreakUpMap.destination | keyvalue">
+                <td class="currency-key">
+                    <p>{{priceDestination.key}}</p>
+                </td>
+                <td class="currency-val text-right">
+                    <p>
+                    {{priceBreakupValue(priceDestination.value)}} 
+                    {{priceBreakupCurrency(priceDestination.value)}}
+                    </p>
+                </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div *ngIf="dataSource.priceBreakUpMap.customsClearanceImport">
+            <div *ngIf="isDialog" class="charges-types">Customs Clearance Import</div>
+            <div class="charges-contents">
+            <table>
+                <tr *ngFor="let customsClearanceImport of dataSource.priceBreakUpMap.customsClearanceImport | keyvalue">
+                <td class="currency-key" [ngClass]="{'charges-types': !isDialog}">
+                    <p>{{customsClearanceImport.key}}</p>
+                </td>
+                <td class="currency-val text-right">
+                    <p>
+                    {{priceBreakupValue(customsClearanceImport.value)}} 
+                    {{priceBreakupCurrency(customsClearanceImport.value)}}
+                    </p>
+                </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="isDialog">
+        <h2 class="totalPrice text-right">
+        {{ dataSource.price }} USD*
+        </h2>
+        <mat-dialog-actions>
+        <button mat-stroked-button color="primary" mat-dialog-close>Close Price Breakdown</button>
+        </mat-dialog-actions>
+    </div>
+</div>
+      

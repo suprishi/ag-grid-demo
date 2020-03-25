@@ -1,0 +1,19 @@
+mat-toolbar {
+  margin-bottom: 32px;
+}
+
+nav {
+  mat-nav-list {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .mat-list-item {
+    color: #ffffff;
+    width: auto;
+    &.active {
+      background-color: #d2d8f9;
+      color: #333333;
+    }
+  }
+}

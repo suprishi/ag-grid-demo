@@ -1,0 +1,36 @@
+<div class="cellContainer">
+  <div class="etd">
+    <span class="label">ETD</span>
+    <span *ngIf="!isHandset" class="value">
+      {{ data.etdDayOfWeek | date: 'MMM dd' }}
+    </span>
+    <span *ngIf="isHandset" class="value">
+      {{ data.etdDayOfWeek | date: 'MMM dd, yyyy' }}
+    </span>
+  </div>
+  <div class="routing">
+    <span *ngIf="data.routingVia != null" class="transshipment-port"
+      >VIA {{ data.routingVia | uppercase }}</span
+    >
+    <div class="arrow">
+      <div class="arrowLine">
+        <span *ngIf="data.routingVia != null" class="arrowDot"></span>
+      </div>
+      <img
+        src="../../../assets/images/arrow_head.svg"
+        alt="to"
+        class="arrowHead"
+      />
+    </div>
+    <span class="transitTime">{{ data.transitTime }} DAYS TRANSIT</span>
+  </div>
+  <div class="eta">
+    <span class="label">ETA</span>
+    <span *ngIf="!isHandset" class="value">
+      {{ data.etaDayOfWeek | date: 'MMM dd' }}
+    </span>
+    <span *ngIf="isHandset" class="value">
+      {{ data.etaDayOfWeek | date: 'MMM dd, yyyy' }}
+    </span>
+  </div>
+</div>

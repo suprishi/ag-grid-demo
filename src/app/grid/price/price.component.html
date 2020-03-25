@@ -1,0 +1,12 @@
+<button mat-flat-button class="priceContainer" (click)="togglePriceBreakup()">
+  <span class="wrapper">
+    <span class="priceValue">{{ params.data.price }}</span>
+    <span class="price-usd">USD</span>
+    <mat-icon
+      *ngIf="showPriceBreakup"
+      aria-hidden="false"
+      aria-label="Expand collapse"
+      [ngClass]="{ expanded: priceBreakupExpanded }"
+      >{{ icon }}</mat-icon>
+  </span>
+</button>

@@ -1,0 +1,55 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.cellContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.borderContainer {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e4e4e4;
+  width: 85%;
+}
+span {
+  line-height: normal;
+}
+
+.label {
+  color: #adadad;
+  font-weight: 600;
+}
+
+.value {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #002b55;
+  line-height: 1.2em;
+}
+
+@include media-breakpoint-only(md) {
+  .value {
+    font-size: 1em;
+  }
+  .borderContainer {
+    width: 95%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .borderContainer {
+    width: 100%;
+    border-right: none;
+    padding-left: 5px;
+  }
+  .label {
+    font-size: 0.9em;
+  }
+  .value {
+    font-size: 1.5em;
+  }
+}

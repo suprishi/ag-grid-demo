@@ -1,0 +1,25 @@
+<div class="spinner" *ngIf="spinner">
+  <mat-spinner color="accent" [diameter]="30"></mat-spinner>
+</div>
+<ag-grid-angular
+  id="customizedGrid"
+  class="ag-theme-material"
+  [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
+  [rowData]="data"
+></ag-grid-angular>
+<hr />
+<div class="row">
+  <div class="col-sm-6">
+    <h4>Configuring in component</h4>
+    <pre>
+frameworkComponents = {{ framework }}
+
+gridOptions = {{ gridOptionsOutput }}
+    </pre>
+  </div>
+  <div class="col-sm-6">
+    <h4>HTML</h4>
+    <pre>{{ html }}</pre>
+  </div>
+</div>

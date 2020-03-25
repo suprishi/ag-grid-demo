@@ -1,0 +1,27 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+button, div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0;
+  background-color: #80c8ee;
+  color: #ffffff;
+}
+
+.noPrice {
+  filter: blur(4px);
+}
+
+@include media-breakpoint-down(sm) {
+  button, div  {
+    font-size: 1.35em;
+  }
+}

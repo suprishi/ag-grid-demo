@@ -1,0 +1,76 @@
+.expanded-price {
+    background-color: #e6f4fc;
+    color: #6f6f6f;
+    padding: 16px;
+    font-size: 1em;
+    line-height: 1.6em;
+  }
+  .charges-types {
+    font-weight: 600;
+  }
+  table {
+    width: 70%;
+    max-width: 300px;
+  }
+  .col-sm-4 table,
+  .col-sm-3 table,
+  .col-sm-2 table {
+    width: 100%;
+  }
+  .col-sm-6 table {
+    width: 80%;
+  }
+  
+  .isDialog.expanded-price {
+    background-color: #fcfcfc;
+    color: #002b55;
+    font-size: 1em;
+    .charges-types {
+      font-size: 0.9em;
+    }
+    table {
+      width: 100% !important;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    td {
+      vertical-align: top;
+    }
+    .currency-key {
+      font-size: 0.85em;
+    }
+    .currency-val {
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .totalPrice {
+      border-top: 1px solid #002b55;
+      border-bottom: 1px solid #002b55;
+      padding: 10px 0;
+      font-size: 1.2em;
+    }
+    .invoice-condition {
+      font-size: 0.8em;
+      color: #adadad;
+      display: block;
+      margin-top: 10px;
+    }
+    mat-dialog-actions button {
+      width: 100%;
+      border-radius: 0;
+      border-color: #56b7e9;
+      margin-top: 20px;
+    }
+  }
+  .dialogHeader {
+    display: flex;
+    justify-content: space-between;
+    .mat-dialog-title {
+      font-weight: 600;
+    }
+    button {
+      position: relative;
+      top: -7px;
+    }
+  }
+  
